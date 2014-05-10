@@ -43,7 +43,6 @@ void	exec(char **cmd, char **envp)
 
 void	exec_cmd(char *cmd, int fd[2], int pipe_fd[2], char **envp)
 {
-	(void)fd;
 	close(pipe_fd[0]);
 	dup2(pipe_fd[1], 1);
 	dup2(fd[0], 0);
@@ -53,7 +52,6 @@ void	exec_cmd(char *cmd, int fd[2], int pipe_fd[2], char **envp)
 
 void	exec_cmd2(char *cmd, int fd[2], int pipe_fd[2], char **envp)
 {
-	wait(0);
 	close(pipe_fd[1]);
 	dup2(pipe_fd[0], 0);
 	dup2(fd[1], 1);
