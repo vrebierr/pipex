@@ -47,6 +47,7 @@ void	exec_cmd(char *cmd, int fd[2], int pipe_fd[2], char **envp)
 	close(pipe_fd[0]);
 	dup2(pipe_fd[1], 1);
 	dup2(fd[0], 0);
+	close(pipe_fd[1]);
 	exec(ft_strsplit(cmd, ' '), envp);
 }
 
@@ -56,5 +57,6 @@ void	exec_cmd2(char *cmd, int fd[2], int pipe_fd[2], char **envp)
 	close(pipe_fd[1]);
 	dup2(pipe_fd[0], 0);
 	dup2(fd[1], 1);
+	close(pipe_fd[0]);
 	exec(ft_strsplit(cmd, ' '), envp);
 }
