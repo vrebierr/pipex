@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = pipex
-SRC = main.c exec_cmd.c
+SRC = pipex.c
 OBJS = $(SRC:.c=.o)
 FLAGS = -Wall -Werror -Wextra -O3 -g
 LFLAGS = -L $(LDIR) -lft

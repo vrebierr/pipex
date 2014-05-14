@@ -13,8 +13,9 @@
 #ifndef PIPEX_H
 # define PIPEX_H
 # include <libft.h>
-
-void	exec_cmd(char *cmd, int fd[2], int pipe_fd[2], char **envp);
-void	exec_cmd2(char *cmd, int fd[2], int pipe_fd[2], char **envp);
+# include <unistd.h>
+# include <fcntl.h>
+# include <sys/stat.h>
+# include <sys/wait.h>
 
 #endif
